@@ -9,11 +9,12 @@ def windows_settings_auto():
     pyautogui.hotkey('win', 'i', interval=1)
     pyautogui.hotkey('win', 'up', interval=1)
     
-    windows_update_auto()
-    windows_private_auto()
-    windows_accessibility_auto()
-    windows_game_auto()
-    windows_time_auto()
+    # windows_update_auto()
+    # windows_private_auto()
+    # windows_accessibility_auto()
+    # windows_game_auto()
+    # windows_time_auto()
+    windows_account_auto()
 
 def windows_update_auto():
     '''Windows更新'''
@@ -321,6 +322,66 @@ def windows_time_auto():
         time.sleep(0.1)
     pyautogui.press('enter')
     time.sleep(DEFAULT_INTERVAL)
+
+def windows_account_auto():
+    '''账户'''
+    pyautogui.click(x=123, y=622, interval=DEFAULT_INTERVAL)
+
+    # 登录选项
+    # click(955, 644)->click(2205, 1340)->click(38, 31)
+    for (i, j) in ((955, 644), (2205, 1340), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+def windows_application_auto():
+    '''应用'''
+    pyautogui.click(x=137, y=562, interval=DEFAULT_INTERVAL)
+
+    # 启动需手动操作
+
+    # 可打开网站的应用
+    for (i, j) in ((1071, 669), (2200, 261), (2202, 374), (2196, 484), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+    # 离线地图
+    for (i, j) in ((984, 556), (2123, 552), (859, 641), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+    # 高级应用设置
+    for (i, j) in ((1232, 336), (1063, 330), (859, 450), (2201, 905), (2160, 1014)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+    for (i, j) in ((2202, 263), (2205, 377), (2199, 485), (2201, 602), (2200, 708), (2207, 824), (2202, 932), (2205, 1043), (2205, 1158), (2200, 1267), (2200, 1374), (2204, 1486)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+    pyautogui.scroll(-2000)
+    time.sleep(DEFAULT_INTERVAL)
+    for (i, j) in ((2199, 1043), (2205, 1157), (2197, 1258), (2205, 1378), (38, 31), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+    # 安装的应用需手动操作
+
+def windows_personalize_auto():
+    '''个性化'''
+    pyautogui.click(x=166, y=504, interval=DEFAULT_INTERVAL)
+    pyautogui.click(x=1590, y=281, interval=DEFAULT_INTERVAL)
+
+    # 任务栏
+    for (i, j) in ((932, 1359), (2085, 310), (2093, 141), (2161, 392), (2157, 487), (2083, 766), (2094, 654), (2078, 968), (2088, 1066), (2080, 1005), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+    # 开始
+    for (i, j) in ((978, 1236), (788, 585), (2201, 692), (2197, 909), (2201, 1020), (2200, 1134), (2130, 1242), (2205, 298), (2206, 409), (2202, 518), (2205, 629), (2202, 738), (2200, 852), (2202, 960), (2203, 1072), (2200, 1184), (38, 31), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+    # 锁屏界面
+    for (i, j) in ((1046, 1020), (2119, 554), (2108, 615), (861, 955), (2135, 1051), (2129, 933), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+
+    # 动态光效
+    # (994, 914), (2212, 663), (2205, 776), (1829, 993), (2224, 1095), (2159, 1200), (38, 31)
+    for (i, j) in ((994, 914), (2212, 663), (2205, 776), (1829, 993), (2224, 1095), (2159, 1200), (38, 31)):
+        pyautogui.click(x=i, y=j, interval=DEFAULT_INTERVAL)
+    
+    # 主题
+
 
 def test():
     '''test'''
